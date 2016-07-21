@@ -8,8 +8,6 @@
 
 #import "GameViewController.h"
 
-//test
-
 @interface GameViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView * ball;
@@ -45,13 +43,15 @@
     panGesture.delegate = self;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     self.startButton.hidden = NO;
     self.currentScore = 0;
     self.currentScoreLabel.text = @"0";
     self.ball.frame = CGRectMake(94, 128, 40, 40);
     self.katie.frame = CGRectMake(144, 551, 86, 116);
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
